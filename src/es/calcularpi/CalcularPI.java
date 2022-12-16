@@ -7,10 +7,13 @@ import java.math.MathContext;
 public class CalcularPI {
 
      public static void main(String[] args) {
-        MathContext mc = new MathContext(10);         
+         //Primero hacemos clic derecho sobre el NUMERO 10 y vamos a la opcion refactor.
+        //En refactor vamos a la opcion introduce y luego a constant.
+        //Seleccionamos el nombre de la constante(NUM_DIG),su tipo de encapsulacion(public) y seleccionamos la opcion de reemplazar sus ocurrencias.
+        MathContext mc = new MathContext(NUM_DIG);         
         //meter en el método compute
         BigDecimal pi = new BigDecimal(0);
-        BigDecimal limit = new BigDecimal(1).movePointLeft(10);
+        BigDecimal limit = new BigDecimal(1).movePointLeft(NUM_DIG);
         boolean stop = false;
         for (int k = 0; !stop; k++) {
             BigDecimal piK = piFunction(k, mc);
@@ -23,6 +26,7 @@ public class CalcularPI {
         System.out.println(pi.round(mc));
         //meter en el método compute
     }
+    public static final int NUM_DIG = 10;
 
     public static BigDecimal piFunction(int k, MathContext mc) {
         //Primero hacemos clic derecho sobre el codigo y vamos a la opcion refactor.
